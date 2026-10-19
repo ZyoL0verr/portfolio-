@@ -266,37 +266,71 @@ section.next img {
     line-height: 1.6;
 }
 
+h3.subtitulo-next {
+    color: #af8b5b;
+}
+
+
 /* =========================
-   SEÇÃO SOBRE
+   SEÇÃO CAVERNA DO DIABO
    ========================= */
-section.sobre {
-    padding: 40px 4%;
+section.caverna {
+    padding: 60px 4%;
 }
 
-section.sobre .flex {
+section.caverna .interface {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 60px;
+    width: 100%;
 }
 
-.sobre .txt-sobre {
-    color: white;
+.img-caverna {
+    flex-shrink: 0;
 }
 
-.sobre .txt-sobre h2 {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 30px;
-}
-
-.sobre .txt-sobre h2 span {
-    color: rgb(192, 192, 192);
+/* Sombra e estilo exclusivos para a imagem da Caverna do Diabo */
+section.caverna img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    /* Aqui você define uma sombra própria, por exemplo, em tons avermelhados ou de terror/mistério */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); 
     display: block;
 }
 
-.sobre .txt-sobre p {
-    font-size: 15px;
+.txt-caverna {
+    color: white;
+    flex: 1;
+}
+
+.txt-caverna h2 {
+    font-size: 38px;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+
+.txt-caverna h2 span {
+    color: rgb(131, 1, 22); /* Tom de destaque para o título */
+    display: block;
+}
+
+.txt-caverna p {
+    font-size: 16px;
     margin: 20px 0;
     text-align: justify;
+    line-height: 1.6;
+}
+
+.subtitulo-caverna {
+    color: #dadada; /* Tom palha/avermelhado para o subtítulo */
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* =========================
