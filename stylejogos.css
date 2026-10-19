@@ -1,21 +1,27 @@
-/*os comentarios para seperar o codigo*/ 
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
     font-family: "Gotu", sans-serif;
-  }
-  
-  .gotu-regular {
+}
+
+.gotu-regular {
     font-family: "Gotu", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
 body {
     background-color: rgb(7, 7, 7);
-    height: 100vh;
+    min-height: 100vh;
     color: white;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 button:hover {
@@ -36,11 +42,7 @@ h2.titulo span {
     color: rgb(106, 7, 7);
 }
 
-.sobre .txt-sobre p span {
-    animation: brilho infinite 3s;
-}
-
-/* Estilo Flexível */
+/* Layout e Conteineres */
 .flex {
     display: flex;
 }
@@ -53,14 +55,24 @@ h2.titulo span {
     align-items: center;
 }
 
-/* Estilo do Cabeçalho */
+/* =========================
+   CABEÇALHO / HEADER
+   ========================= */
 header {
     padding: 40px 4%;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 .logo img {
-    width:160px;
-    height:150px;
+    width: 160px;
+    height: 150px;
 }
 
 header nav ul {
@@ -102,16 +114,30 @@ header nav a:hover {
     color: #fff;
 }
 
-/* Estilo do Site */
-section.topo-do-site {
-    padding: 40px 4%;
+.idioma button {
+    padding: 10px 40px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    border: 0;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px #ff3c5c;
+    transition: 0.3s;
 }
 
-.interface {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
+.idioma button:hover {
+    background: #530000;
+    color: #ffffff;
+}
+
+/* =========================
+   SEÇÃO TOPO DO SITE
+   ========================= */
+section.topo-do-site {
+    padding: 40px 4%;
 }
 
 .txt-topo-site {
@@ -127,7 +153,6 @@ section.topo-do-site {
 }
 
 .topo-do-site .txt-topo-site h1 span {
-
     animation: brilho infinite 3s;
     font-size: 17px;
 }
@@ -138,22 +163,9 @@ section.topo-do-site {
     font-size: 17px;
 }
 
-header {
-    opacity: 0;
-    animation: fadeIn 3s ease forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-.logo-footer img {
-    width: 150px;
-    height: auto;
-}
-
+/* =========================
+   SEÇÃO TRABALHOS
+   ========================= */
 section.trabalhos {
     padding: 40px 4%;
 }
@@ -196,13 +208,67 @@ section.trabalhos .flex {
     text-decoration-line: underline;
     text-decoration-color: black;     
 }
+
 .trabalhos .trabalhos-box a p:hover {
     color: lightgray; 
     text-decoration: underline;
-    text-decoration-color: white
+    text-decoration-color: white;
 }
 
-/* Estilo Sobre */
+/* =========================
+   SEÇÃO NEXTDOOR (IMAGEM + TEXTO LADO A LADO)
+   ========================= */
+section.next {
+    padding: 60px 4%;
+}
+
+section.next .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+}
+
+.img-next {
+    flex-shrink: 0;
+}
+
+section.next img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px #dbb68577;
+    display: block;
+}
+
+.txt-next {
+    color: white;
+    flex: 1;
+}
+
+.txt-next h2 {
+    font-size: 38px;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+
+.txt-next h2 span {
+    color: rgb(167, 151, 99);
+    display: block;
+}
+
+.txt-next p {
+    font-size: 16px;
+    margin: 20px 0;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* =========================
+   SEÇÃO SOBRE
+   ========================= */
 section.sobre {
     padding: 40px 4%;
 }
@@ -223,7 +289,7 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre h2 span {
-    color: silver;
+    color: rgb(192, 192, 192);
     display: block;
 }
 
@@ -233,22 +299,9 @@ section.sobre .flex {
     text-align: justify;
 }
 
-.bnt-social button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 0;
-    background-color: silver;
-    font-size: 22px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: 0.2s;
-    margin: 10px;
-}
-
-/* Estilo Portfólio */
-
-
+/* =========================
+   SEÇÃO PORTFÓLIO
+   ========================= */
 section.portifolio .flex {
     gap: 80px;
     justify-content: space-around;
@@ -292,49 +345,46 @@ section.portifolio .flex {
     opacity: 1;
 }
 
-/* Estilo rodapé */
+/* =========================
+   RODAPÉ / FOOTER
+   ========================= */
 footer {
-    padding: 40px 4%; 
-    background: rgba(0, 0, 0, 0.8);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); 
     padding: 80px 4%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); 
     box-shadow: 0 0 40px 10px rgba(114, 3, 3, 0.69);
-    margin: 40px 0; 
+    margin-top: 40px; 
 }
 
 footer .flex {
     justify-content: space-between;
 }
 
-footer .line-footer p i {
-    color: silver;
-    font-size: 22px;
-}
-
-footer .line-footer p a {
-    color: white;
-    text-decoration: none;
+footer .logo-footer img {
+    width: 150px;
+    height: auto;
 }
 
 footer .logo-footer p a {
     color: white;
+    text-decoration: none;
 }
 
-footer .line-footer {
-    padding: 20px 0;
-}
-
-html {
-    scroll-behavior: smooth;
+.bnt-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 0;
+    background-color: silver;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.2s;
 }
 
 /* =========================
-   RESPONSIVIDADE
+   RESPONSIVIDADE (TABLETS E CELULARES)
    ========================= */
-
-/* Tablets */
 @media (max-width: 900px) {
-
     .interface {
         width: 90%;
         max-width: 1200px;
@@ -353,6 +403,21 @@ html {
         justify-content: center;
     }
 
+    /* NEXTDOOR RESPONSIVO */
+    section.next .interface {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .txt-next p {
+        text-align: center;
+    }
+
+    .txt-next h2 span {
+        display: inline;
+    }
+
     /* TOPO */
     .topo-do-site .interface {
         flex-direction: column;
@@ -364,17 +429,6 @@ html {
         width: 100%;
     }
 
-    .img-topo-site {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .img-topo-site img {
-        width: 70%;
-        max-width: 350px;
-    }
-
     /* SOBRE */
     .sobre .flex {
         flex-direction: column;
@@ -382,45 +436,17 @@ html {
         gap: 40px;
     }
 
-    .img-sobre {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .img-sobre img {
-        width: 70%;
-        max-width: 350px;
-    }
-
-    .txt-sobre {
-        width: 100%;
-    }
-
-    .bnt-social {
-        justify-content: center;
-    }
-
-    /* TRABALHOS */
-    .trabalhos .flex {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .trabalhos-box {
-        width: 45%;
-        min-width: 250px;
-    }
-
-    /* PORTFÓLIO */
+    /* TRABALHOS E PORTFÓLIO */
+    .trabalhos .flex,
     .portifolio .flex {
         flex-wrap: wrap;
         justify-content: center;
     }
 
+    .trabalhos-box,
     .img-port {
-        width: 45%;
-        min-width: 280px;
+        width: 100%;
+        max-width: 350px;
     }
 
     /* FOOTER */
@@ -431,40 +457,12 @@ html {
     }
 }
 
-
-/* =========================
-   CELULARES
-   ========================= */
-
 @media (max-width: 600px) {
-
     body {
         overflow-x: hidden;
     }
 
-    .interface {
-        width: 90%;
-    }
-
-    /* HEADER */
-    header {
-        padding: 10px 0;
-    }
-
-    header .interface {
-        gap: 15px;
-    }
-
-    .logo img {
-        width: 100px;
-        height: auto;
-    }
-
-    nav ul {
-        gap: 12px;
-    }
-
-    nav ul li a {
+    header nav ul li a {
         font-size: 14px;
     }
 
@@ -473,188 +471,12 @@ html {
         font-size: 14px;
     }
 
-}
-
-    /* TOPO */
-    .topo-do-site {
-        padding: 50px 0;
-    }
-
-    .txt-topo-site h1 {
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    .txt-topo-site p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .img-topo-site img {
-        width: 85%;
-        max-width: 300px;
-    }
-
-    /* TOPO */
-    .topo-do-site {
-        padding: 50px 0;
-    }
-
-    .txt-topo-site h1 {
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    .txt-topo-site p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .img-topo-site img {
-        width: 85%;
-        max-width: 300px;
-    }
-
-
-    /* SOBRE */
-    .sobre {
-        padding: 50px 0;
-    }
-
-    .img-sobre img {
-        width: 85%;
-        max-width: 300px;
-    }
-
-    .txt-sobre h2 {
-        font-size: 25px;
-        line-height: 1.3;
-    }
-
-    .txt-sobre p {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-
-    /* TÍTULOS */
-    .titulo {
-        font-size: 28px;
-        text-align: center;
-        line-height: 1.3;
-    }
-
-
-    /* TRABALHOS */
-    .trabalhos {
-        padding: 50px 0;
-    }
-
-    .trabalhos .flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .trabalhos-box {
-        width: 100%;
-        min-width: unset;
-    }
-
-
-    /* PORTFÓLIO */
-    .portifolio {
-        padding: 50px 0;
-    }
-
-    .portifolio .flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .img-port {
-        width: 100%;
-        min-width: unset;
-        height: 250px;
-    }
-
-
-    /* FOOTER */
-    .footer {
-        padding: 30px 0;
-    }
-
-    .footer .interface {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .logo-footer img {
-        width: 100px;
-    }
-
-    .logo-footer p {
-        font-size: 13px;
-        word-break: break-word;
-    }
-
-/* =========================
-   CELULARES MUITO PEQUENOS
-   ========================= */
-
-@media (max-width: 400px) {
-
-    nav ul {
-        gap: 8px;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-
-    .txt-topo-site h1 {
-        font-size: 27px;
-    }
-
-    .titulo {
-        font-size: 24px;
-    }
-
-    .txt-sobre h2 {
-        font-size: 22px;
-    }
-
-    .img-port {
-        height: 220px;
-    }
-}
-
-.idioma button {
-    padding: 8px 14px;
-    font-family: inherit;
-    transition: 0.3s;    padding: 10px 40px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #fff;
-    background-color: rgb(0, 0, 0);
-    border: 0;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0px 0px 8px #ff3c5c;
-    transition: 0.3s;
-}
-
-.idioma button:hover {
-    background: #530000;
-    color: #ffffff;
-}
-
-@media (max-width: 600px) {
-
     .idioma button {
         font-size: 12px;
         padding: 7px 10px;
+    }
+
+    section.next img {
+        width: 100%;
     }
 }
