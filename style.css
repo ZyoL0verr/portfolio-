@@ -331,38 +331,150 @@ section.portifolio .flex {
     opacity: 1;
 }
 
-/* Estilo rodapé */
-footer {
-    padding: 40px 4%; 
-    background: rgba(0, 0, 0, 0.8);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); 
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer.footer {
     padding: 80px 4%;
+    margin: 40px 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+    );
     box-shadow: 0 0 40px 10px rgba(114, 3, 3, 0.69);
-    margin: 40px 0; 
 }
 
-footer .flex {
+footer.footer .interface.flex {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 25px;
 }
 
-footer .line-footer p i {
-    color: silver;
-    font-size: 22px;
+/* Copyright */
+footer .copyright {
+    flex: 1;
+    margin-right: 40px;
 }
 
-footer .line-footer p a {
+footer .copyright p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Logo */
+footer .logo-footer {
+    flex: 0 0 auto;
+}
+
+footer .logo-footer img {
+    display: block;
+    width: 150px;
+    height: auto;
+    max-width: none;
+    box-shadow: none;
+}
+
+/* E-mail e redes sociais */
+footer .footer-contatos {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+footer .footer-contatos .email {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+footer .footer-contatos .email a {
     color: white;
     text-decoration: none;
 }
 
-footer .logo-footer p a {
-    color: white;
+/* Botões sociais */
+footer .bnt-social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
 }
 
-footer .line-footer {
-    padding: 20px 0;
+footer .bnt-social a {
+    display: flex;
+    text-decoration: none;
 }
 
+footer .bnt-social button {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background-color: silver;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0;
+    transition: 0.2s;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    footer.footer .interface.flex {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    footer .copyright {
+        flex: initial;
+        margin-right: 0;
+    }
+
+    footer .footer-contatos {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    footer .footer-contatos .email {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        justify-content: center;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    footer.footer {
+        padding: 30px 4%;
+    }
+
+    footer .logo-footer img {
+        width: 150px;
+    }
+
+    footer .bnt-social {
+        justify-content: center;
+        gap: 12px;
+    }
+}
 html {
     scroll-behavior: smooth;
 }
