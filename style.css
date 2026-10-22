@@ -771,17 +771,20 @@ html {
 }
 
 .idioma button {
-    padding: 8px 14px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 10px 40px;
     font-family: inherit;
-    transition: 0.3s;    padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
+    line-height: normal;
     color: #fff;
-    background-color: rgb(0, 0, 0);
-    border: 0;
+    background-color: #000;
+    border: none;
     border-radius: 40px;
     cursor: pointer;
-    box-shadow: 0px 0px 8px #ff3c5c;
+    box-shadow: 0 0 8px #ff3c5c;
     transition: 0.3s;
 }
 

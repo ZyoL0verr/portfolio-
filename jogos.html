@@ -43,11 +43,14 @@
                     <button data-pt="Contato" data-en="Contact">Contato</button>
                 </a>
             </div>
+           <!-- BOTÃO DE IDIOMA -->
 
-            <!-- BOTÃO DE IDIOMA -->
             <div class="idioma">
-                <button id="btnIdioma">🇺🇸 English</button>
+                <button id="btnIdioma">
+                    🇺🇸 English
+                </button>
             </div>
+
         </div>
     </header>
 
@@ -119,10 +122,19 @@
                 Em Breve
             </h3>
 
-            <p data-pt="Descrição do jogo..." data-en="Game description...">
+            <p data-pt="Caverna do Diabo
+                Ambientado nos dias atuais, em Eldorado, São Paulo, Caverna do Diabo é um jogo de terror e sobrevivência inspirado em um dos pontos turísticos mais conhecidos do estado. 
+                A história acompanha Ayla Carrow, uma jovem estagiária da polícia que decide investigar o misterioso desaparecimento de sua mãe, ocorrido há quase dez anos durante uma visita guiada à caverna.
+                Ao descobrir que sua família escondeu a verdade sobre o caso, Ayla invade o local interditado em busca de respostas. Porém, o que começa como uma investigação pessoal se transforma em uma luta desesperada pela sobrevivência quando ela se depara com criaturas sobrenaturais e caminhos que parecem não ter saída. 
+                Agora, perdida nas profundezas da caverna, Ayla precisa enfrentar seus medos, superar obstáculos e desvendar os mistérios que assombram aquele lugar antes que se torne mais uma vítima de seus segredos."
+                data-en="Caverna do Diabo (Devil's Cave)
+                Set in the present day in Eldorado, São Paulo, Caverna do Diabo is a survival horror game inspired by one of the state's most well-known tourist attractions. 
+                The story follows Ayla Carrow, a young police intern who decides to investigate the mysterious disappearance of her mother, which happened almost ten years ago during a guided tour of the cave.
+                Upon discovering that her family hid the truth about the case, Ayla breaks into the restricted area in search of answers. However, what begins as a personal investigation turns into a desperate struggle for survival when she encounters supernatural creatures and dead ends. 
+                Now, lost in the depths of the cave, Ayla must face her fears, overcome obstacles, and unravel the mysteries haunting that place before she becomes just another victim of its secrets.">
                 Caverna do Diabo
                 Ambientado nos dias atuais, em Eldorado, São Paulo, Caverna do Diabo é um jogo de terror e sobrevivência inspirado em um dos pontos turísticos mais conhecidos do estado. <br>
-               <br>A história acompanha Ayla Carrow, uma jovem estagiária da polícia que decide investigar o misterioso desaparecimento de sua mãe, ocorrido há quase dez anos durante uma visita guiada à caverna.
+                <br>A história acompanha Ayla Carrow, uma jovem estagiária da polícia que decide investigar o misterioso desaparecimento de sua mãe, ocorrido há quase dez anos durante uma visita guiada à caverna.
                 Ao descobrir que sua família escondeu a verdade sobre o caso, Ayla invade o local interditado em busca de respostas. Porém, o que começa como uma investigação pessoal se transforma em uma luta desesperada pela sobrevivência quando ela se depara com criaturas sobrenaturais e caminhos que parecem não ter saída. <br>
                 Agora, perdida nas profundezas da caverna, Ayla precisa enfrentar seus medos, superar obstáculos e desvendar os mistérios que assombram aquele lugar antes que se torne mais uma vítima de seus segredos.
             </p>
@@ -180,39 +192,56 @@
         </div>
     </div>
 </footer>
-<script>
-    
-    document.addEventListener("DOMContentLoaded", () => {
-    const btnIdioma = document.getElementById("btnIdioma");
 
-    // Idioma padrão inicial
-    let idiomaAtual = "pt";
+    <script>
 
-    if (btnIdioma) {
+        const btnIdioma = document.getElementById("btnIdioma");
+
+        let idiomaAtual = "pt";
+
+
         btnIdioma.addEventListener("click", () => {
-            // Alterna o idioma
-            idiomaAtual = idiomaAtual === "pt" ? "en" : "pt";
 
-            // Atualiza o texto do botão
-            btnIdioma.textContent = idiomaAtual === "pt" ? "🇺🇸 English" : "🇧🇷 Português";
+            const elementos = document.querySelectorAll(
+                "[data-pt][data-en]"
+            );
 
-            // Seleciona todos os elementos que possuem atributos de idioma
-            const elementosTraduziveis = document.querySelectorAll("[data-pt][data-en]");
 
-            elementosTraduziveis.forEach((elemento) => {
-                // Pega o texto correspondente ao idioma atual
-                const novoTexto = elemento.getAttribute(data-${idiomaAtual});
+            if (idiomaAtual === "pt") {
 
-                if (novoTexto) {
-                    // Mantém a quebra de linha <br> se o texto tiverHTML ou insere como texto simples
-                    elemento.innerText = novoTexto;
-                }
-            });
+                elementos.forEach(elemento => {
+
+                    elemento.textContent = elemento.dataset.en;
+
+                });
+
+                btnIdioma.textContent = "🇧🇷 Português";
+
+                document.documentElement.lang = "en";
+
+                idiomaAtual = "en";
+
+            }
+
+            else {
+
+                elementos.forEach(elemento => {
+
+                    elemento.textContent = elemento.dataset.pt;
+
+                });
+
+                btnIdioma.textContent = "🇺🇸 English";
+
+                document.documentElement.lang = "pt-br";
+
+                idiomaAtual = "pt";
+
+            }
+
         });
-    }
-});
 
-</script>
+    </script>
 
 </body>
 </html>

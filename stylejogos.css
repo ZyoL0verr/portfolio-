@@ -1,3 +1,4 @@
+
 /* =========================
    CONFIGURAÇÕES GERAIS
    ========================= */
@@ -42,7 +43,7 @@ h2.titulo span {
     color: rgb(106, 7, 7);
 }
 
-/* Layout e Conteineres */
+/* Layout e Contêineres */
 .flex {
     display: flex;
 }
@@ -114,17 +115,22 @@ header nav a:hover {
     color: #fff;
 }
 
+/* Botão de idioma */
 .idioma button {
-    padding: 10px 40px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 20px 40px;
     font-family: inherit;
     font-size: 18px;
     font-weight: 600;
+    line-height: normal;
     color: #fff;
-    background-color: rgb(0, 0, 0);
-    border: 0;
+    background-color: #000;
+    border: none;
     border-radius: 40px;
     cursor: pointer;
-    box-shadow: 0px 0px 8px #ff3c5c;
+    box-shadow: 0 0 8px #ff3c5c;
     transition: 0.3s;
 }
 
@@ -134,89 +140,8 @@ header nav a:hover {
 }
 
 /* =========================
-   SEÇÃO TOPO DO SITE
-   ========================= */
-section.topo-do-site {
-    padding: 40px 4%;
-}
-
-.txt-topo-site {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.topo-do-site h1 {
-    color: white;
-    font-size: 42px;
-    line-height: 40px;
-}
-
-.topo-do-site .txt-topo-site h1 span {
-    animation: brilho infinite 3s;
-    font-size: 17px;
-}
-
-.topo-do-site .txt-topo-site p {
-    color: white;
-    margin: 40px 0;
-    font-size: 17px;
-}
-
-/* =========================
-   SEÇÃO TRABALHOS
-   ========================= */
-section.trabalhos {
-    padding: 40px 4%;
-}
-
-section.trabalhos .flex {
-    display: flex;
-    gap: 90px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.trabalhos .trabalhos-box {
-    color: white;
-    padding: 40px;
-    border-radius: 20px;
-    transition: 0.2s;
-    flex: 1;
-    max-width: 300px;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.trabalhos .trabalhos-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px #ff3c5c;
-}
-
-.trabalhos .trabalhos-box i {
-    font-size: 70px;
-    color: silver;
-}
-
-.trabalhos .trabalhos-box h3 {
-    font-size: 28px;
-    margin: 15px 0px;
-}
-
-.trabalhos .trabalhos-box a p {
-    color: white; 
-    text-decoration-line: underline;
-    text-decoration-color: black;     
-}
-
-.trabalhos .trabalhos-box a p:hover {
-    color: lightgray; 
-    text-decoration: underline;
-    text-decoration-color: white;
-}
-
-/* =========================
-   SEÇÃO NEXTDOOR (IMAGEM + TEXTO LADO A LADO)
+   SEÇÃO NEXTDOOR
+   IMAGEM + TEXTO LADO A LADO
    ========================= */
 section.next {
     padding: 60px 4%;
@@ -268,8 +193,9 @@ section.next img {
 
 h3.subtitulo-next {
     color: #af8b5b;
+    font-size: 26px;
+    margin: 30px 0 15px 0;
 }
-
 
 /* =========================
    SEÇÃO CAVERNA DO DIABO
@@ -290,14 +216,12 @@ section.caverna .interface {
     flex-shrink: 0;
 }
 
-/* Sombra e estilo exclusivos para a imagem da Caverna do Diabo */
 section.caverna img {
     max-width: 100%;
     width: 400px;
     height: auto;
     border-radius: 8px;
-    /* Aqui você define uma sombra própria, por exemplo, em tons avermelhados ou de terror/mistério */
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0px 0px 15px rgba(131, 1, 22, 0.4);
     display: block;
 }
 
@@ -313,7 +237,7 @@ section.caverna img {
 }
 
 .txt-caverna h2 span {
-    color: rgb(131, 1, 22); /* Tom de destaque para o título */
+    color: rgb(131, 1, 22);
     display: block;
 }
 
@@ -325,7 +249,7 @@ section.caverna img {
 }
 
 .subtitulo-caverna {
-    color: #dadada; /* Tom palha/avermelhado para o subtítulo */
+    color: #dadada;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
@@ -334,62 +258,18 @@ section.caverna img {
 }
 
 /* =========================
-   SEÇÃO PORTFÓLIO
+   RODAPÉ / FOOTER
    ========================= */
-section.portifolio .flex {
-    gap: 80px;
-    justify-content: space-around;
-    margin-top: 60px;
-}
-
-.img-port {
-    width: 360px;
-    height: 460px;
-    background-size: cover;
-    background-position: 100% 0;
-    transition: 2s;
-    cursor: pointer;
-    border-radius: 40px;
-    position: relative;
-}
-
-.img-port:hover {
-    background-position: 100% 100%;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.726);
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: white;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.overlay:hover {
-    opacity: 1;
-}
-
-/* Estilo rodapé */
-/* FOOTER */
 footer {
-    padding: 40px 4%; 
-    background: rgba(0, 0, 0, 0.8);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); 
     padding: 80px 4%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+    );
     box-shadow: 0 0 40px 10px rgba(114, 3, 3, 0.69);
-    margin: 40px 0; 
+    margin: 40px 0;
 }
-
 
 footer.footer .interface {
     display: flex;
@@ -402,10 +282,18 @@ footer.footer .interface {
     margin: 0 auto;
 }
 
+/* Copyright */
 footer .copyright {
     flex: 1;
+    margin-right: 40px;
 }
 
+footer .copyright p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Logo */
 footer .logo-footer {
     flex: 0 0 auto;
 }
@@ -418,27 +306,30 @@ footer .logo-footer img {
     box-shadow: none;
 }
 
-.footer-contato {
+/* E-mail e redes sociais */
+footer .footer-contato {
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 30px;
 }
 
-.email-footer {
+footer .email-footer {
     display: flex;
     align-items: center;
     gap: 6px;
+    margin: 0;
     white-space: nowrap;
 }
 
-.email-footer a {
+footer .email-footer a {
     color: white;
     text-decoration: none;
 }
 
-.bnt-social {
+/* Botões sociais */
+footer .bnt-social {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -446,25 +337,30 @@ footer .logo-footer img {
     flex-wrap: nowrap;
 }
 
-.bnt-social a {
+footer .bnt-social a {
     display: flex;
     text-decoration: none;
 }
 
-.bnt-social button {
+footer .bnt-social button {
     width: 60px;
     height: 60px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 0;
     border-radius: 50%;
     background-color: silver;
     font-size: 22px;
     cursor: pointer;
+    margin: 0;
     transition: 0.2s;
 }
 
 /* =========================
-   RESPONSIVIDADE (TABLETS E CELULARES)
+   RESPONSIVIDADE
+   TABLETS E CELULARES
    ========================= */
 @media (max-width: 900px) {
     .interface {
@@ -485,60 +381,53 @@ footer .logo-footer img {
         justify-content: center;
     }
 
-    /* NEXTDOOR RESPONSIVO */
-    section.next .interface {
+    /* SEÇÕES DE JOGOS RESPONSIVAS */
+    section.next .interface,
+    section.caverna .interface {
         flex-direction: column;
         text-align: center;
         gap: 30px;
     }
 
-    .txt-next p {
+    .txt-next p,
+    .txt-caverna p {
         text-align: center;
     }
 
-    .txt-next h2 span {
+    .txt-next h2 span,
+    .txt-caverna h2 span {
         display: inline;
     }
 
-    /* TOPO */
-    .topo-do-site .interface {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .txt-topo-site {
-        width: 100%;
-    }
-
-    /* SOBRE */
-    .sobre .flex {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    /* TRABALHOS E PORTFÓLIO */
-    .trabalhos .flex,
-    .portifolio .flex {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .trabalhos-box,
-    .img-port {
-        width: 100%;
-        max-width: 350px;
-    }
-
     /* FOOTER */
-    .footer .interface {
+    footer.footer .interface {
         flex-direction: column;
         gap: 25px;
         text-align: center;
     }
+
+    footer .copyright {
+        flex: initial;
+        margin-right: 0;
+    }
+
+    footer .footer-contato {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    footer .email-footer {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        justify-content: center;
+    }
 }
 
+/* =========================
+   CELULARES
+   ========================= */
 @media (max-width: 600px) {
     body {
         overflow-x: hidden;
@@ -549,7 +438,7 @@ footer .logo-footer img {
     }
 
     .btn-contato button {
-        padding: 10px 18px;
+        padding: 8px 18px;
         font-size: 14px;
     }
 
@@ -558,7 +447,24 @@ footer .logo-footer img {
         padding: 7px 10px;
     }
 
-    section.next img {
+    section.next img,
+    section.caverna img {
         width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* FOOTER */
+    footer.footer {
+        padding: 30px 4%;
+    }
+
+    footer .logo-footer img {
+        width: 150px;
+    }
+
+    footer .bnt-social {
+        justify-content: center;
+        gap: 12px;
     }
 }
