@@ -354,7 +354,7 @@ footer.footer .interface.flex {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 200px;
 }
 
 /* Copyright */
@@ -387,7 +387,7 @@ footer .footer-contatos {
     flex: 1;
     align-items: center;
     justify-content: flex-end;
-    gap: 30px;
+    gap: 100px;
 }
 
 footer .footer-contatos .email {
